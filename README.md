@@ -66,8 +66,13 @@ We will use Docker to containerize the Go web application. Docker is a container
     ```bash
     docker run -d -p 8080:8080 <your-dockerhub-username>/go-web-app
     
+4. *Push Docker Image to DockerHub:*
+    
+    ```bash
+    docker push <your-docker-username>/go-web-app
 
-4. *Setup Kubernetes Resources:*
+
+5. *Setup Kubernetes Resources:*
     - Deploy the application using Helm:
     ```bash
     helm install go-web-app ./helm-chart/
