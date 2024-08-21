@@ -6,7 +6,7 @@ This project demonstrates the full lifecycle of a DevOps implementation, from co
 The main goal of this project is to implement DevOps practices in the Go web application. The project is a simple website written in Golang. It uses the `net/http` package to serve HTTP requests.
 
 ## Summary Diagram
-![image](https://github.com/Mohsinraza27/go-web-app-cicd/blob/77564f8bb47e6663f9504f4e7fa83ca873df3e94/static/images/golang-website.png)
+![image](https://raw.githubusercontent.com/Mohsinraza27/go-web-app-cicd/main/static/images/golang-website.png)
 
 ## Table of Contents
 1. [Project Description](#project-description)
