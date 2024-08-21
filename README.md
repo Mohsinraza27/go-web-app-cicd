@@ -5,6 +5,8 @@ This project demonstrates the full lifecycle of a DevOps implementation, from co
 
 The main goal of this project is to implement DevOps practices in the Go web application. The project is a simple website written in Golang. It uses the `net/http` package to serve HTTP requests.
 
+## Summary Diagram
+![image](https://github.com/Mohsinraza27/go-web-app-cicd/blob/77564f8bb47e6663f9504f4e7fa83ca873df3e94/static/images/golang-website.png)
 
 ## Table of Contents
 1. [Project Description](#project-description)
@@ -38,48 +40,48 @@ The goal of this project was to implement a robust DevOps pipeline that includes
 - *Helm:* Install Helm for Kubernetes management.
 - *GitHub Account:* For repository management and setting up GitHub Actions.
 
-## Creating Dockerfile (Multi-stage build)
+### Creating Dockerfile (Multi-stage build)
 The Dockerfile is used to build a Docker image. The Docker image contains the Go web application and its dependencies. The Docker image is then used to create a Docker container.
 
 We will use a Multi-stage build to create the Docker image. The Multi-stage build is a feature of Docker that allows you to use multiple build stages in a single Dockerfile. This will reduce the final Docker image's size and secure the image by removing unnecessary files and packages.
 
-## Containerization
+### Containerization
 Containerization is the process of packaging an application and its dependencies into a container. The container is then run on a container platform such as Docker. Containerization allows you to run the application in a consistent environment, regardless of the underlying infrastructure.
 
 We will use Docker to containerize the Go web application. Docker is a container platform that allows you to build, ship, and run containers.
 
 ### Installation Steps
 1. *Clone the Repository:*
-    bash
+    ```bash
     git clone https://github.com/Mohsinraza27/go-web-app-cicd.git
     cd go-web-app-cicd
     
 
 2. *Build Docker Images:*
-    bash
+    ```bash
     docker build -t <your-dockerhub-username>/go-web-app .
     
 
 3. *Run Docker Containers:*
-    bash
+    ```bash
     docker run -d -p 8080:8080 <your-dockerhub-username>/go-web-app
     
 
 4. *Setup Kubernetes Resources:*
     - Deploy the application using Helm:
-    bash
+    ```bash
     helm install go-web-app ./helm-chart/
     
 
 5. *Access the Application:*
     - If using minikube, access the application using:
-    bash
+    ```bash
     minikube service go-web-app-service
     
 
 ## CI/CD Pipeline
 
-# Continuous Integration (CI)
+### Continuous Integration (CI)
 Continuous Integration (CI) is the practice of automating the integration of code changes into a shared repository. CI helps to catch bugs early in the development process and ensures that the code is always in a deployable state.
 
 We will use GitHub Actions to implement CI for the Go web application. GitHub Actions is a feature of GitHub that allows you to automate workflows, such as building, testing, and deploying code.
@@ -90,7 +92,7 @@ The CI/CD pipeline is fully automated using GitHub Actions. Every push to the ma
 2. *Test:* Automated tests are run to ensure code quality.
 3. *Deploy:* Successful builds are deployed to the Kubernetes cluster.
 
-# Continuous Deployment (CD)
+### Continuous Deployment (CD)
 Continuous Deployment (CD) is the practice of automatically deploying code changes to a production environment. CD helps to reduce the time between code changes and deployment, allowing you to deliver new features and fixes to users faster.
 
 We will use Argo CD to implement CD for the Go web application. Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes. It allows you to deploy applications to Kubernetes clusters using Git as the source of truth.
